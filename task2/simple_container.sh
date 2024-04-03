@@ -59,7 +59,7 @@ echo $$ > /sys/fs/cgroup/my_container_cgroup/cgroup.procs
 unshare -p -f -u -- chroot $SIMPLE_CONTAINER_ROOT ./container_prog subtask3
 
 # Remove the cgroup
-
+echo $$ > /sys/fs/cgroup/cgroup.procs
 rmdir "$CGROUP_DIR"
 
 # If mounted dependent libraries, unmount them, else ignore
